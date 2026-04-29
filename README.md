@@ -117,22 +117,19 @@ src/main/resources/
 - **GitHub Issues**: [MiniProject Issues](https://github.com/Byungkeol-Choi/MiniProject/issues)
 - 팀 진행·회의 사항 등은 발표 슬라이드 및 공용 스프레드시트(발표 자료 링크)를 참고하세요.
 
-### 트러블슈팅 기록
-
-#### 1. DB 연결 실패 — `Tenant or user not found`
-- **원인**: Supabase DB 사용자 정보가 `application.yml`과 불일치
-- **해결**: Supabase `Settings > Database`에서 비밀번호 재설정 후 `application.yml` 반영
-
-#### 2. DB 연결 실패 — `password authentication failed for user "postgres"`
-- **원인**: `application.yml`의 DB 비밀번호가 실제 Supabase 비밀번호와 불일치
-- **해결**: Supabase 대시보드에서 `Reset database password` 후 `application.yml` 반영
-
-#### 3. 관리자 로그인 실패 — `BadCredentialsException`
-- **원인 1**: `SecurityConfig`에 `AuthenticationManager` 빈이 없어 `PasswordEncoder`가 Spring Security에 연결되지 않음
-- **원인 2**: fork로 프로젝트 복사 시 DB의 BCrypt 해시값이 실제 비밀번호와 불일치
-- **해결**:
-  1. `SecurityConfig`에 `DaoAuthenticationProvider`로 `UserDetailsService`와 `BCryptPasswordEncoder` 연결
-  2. `BCryptPasswordEncoder.encode()`로 새 해시값 생성 후 DB `admin` 테이블 업데이트
+- **트러블슈팅 기록**
+   - **1. DB 연결 실패** — `Tenant or user not found`
+   - **원인**: Supabase DB 사용자 정보가 `application.yml`과 불일치
+   - **해결**: Supabase `Settings > Database`에서 비밀번호 재설정 후 `application.yml` 반영
+   - **2. DB 연결 실패** — `password authentication failed for user "postgres"`
+   - **원인**: `application.yml`의 DB 비밀번호가 실제 Supabase 비밀번호와 불일치
+   - **해결**: Supabase 대시보드에서 `Reset database password` 후 `application.yml` 반영
+   - **3. 관리자 로그인 실패** — `BadCredentialsException`
+   - **원인 1**: `SecurityConfig`에 `AuthenticationManager` 빈이 없어 `PasswordEncoder`가 Spring Security에 연결되지 않음
+   - **원인 2**: fork로 프로젝트 복사 시 DB의 BCrypt 해시값이 실제 비밀번호와 불일치
+   - **해결**:
+     1. `SecurityConfig`에 `DaoAuthenticationProvider`로 `UserDetailsService`와 `BCryptPasswordEncoder` 연결
+     2. `BCryptPasswordEncoder.encode()`로 새 해시값 생성 후 DB `admin` 테이블 업데이트
 
 ## 라이선스
 
