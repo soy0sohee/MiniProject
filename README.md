@@ -118,6 +118,7 @@ src/main/resources/
 - 팀 진행·회의 사항 등은 발표 슬라이드 및 공용 스프레드시트(발표 자료 링크)를 참고하세요.
 
 **트러블슈팅 기록**
+
   **1. DB 연결 실패** — `Tenant or user not found`
 - **원인**: Supabase DB 사용자 정보가 `application.yml`과 불일치
 - **해결**: Supabase `Settings > Database`에서 비밀번호 재설정 후 `application.yml` 반영
