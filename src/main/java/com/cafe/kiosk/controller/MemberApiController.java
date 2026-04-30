@@ -63,6 +63,7 @@ public class MemberApiController {
 
     /**
      * 전화번호로 회원을 조회하고 포인트를 적립한다.
+     * 포인트 적립 후 로그아웃
      */
     // 호출위치: kiosk/stamp.html (적립하기 버튼)
     @PostMapping("/stamp")

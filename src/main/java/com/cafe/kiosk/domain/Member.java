@@ -37,6 +37,7 @@ public class Member {
             createdAt = LocalDateTime.now();
         }
     }
+
     // 최병걸 추가 시작
     /** 화면 표시용 (예: 01011112222 → 010-1111-2222). DB 저장 값은 변경하지 않음. */
     public String getDisplayPhone() {

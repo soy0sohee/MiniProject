@@ -179,13 +179,24 @@ body {
 }
 
 /* ─── 키오스크 푸터 (관리자 진입) ─────────────────── */
-.kiosk-page-footer {
+.kiosk-page-footer-index {
   flex-shrink: 0;
-  padding: 12px 20px;
+  padding: 12px 28px;
   text-align: right;
   background: white;
   border-top: 1px solid var(--cafe-cream);
 }
+.kiosk-page-footer {
+   width:100%;
+   height:50px;
+   position:fixed;
+   bottom:0;
+   flex-shrink: 0;
+   padding: 12px 28px;
+   text-align: right;
+   background: white;
+   border-top: 1px solid var(--cafe-cream);
+ }
 
 .bi-person-gear {
   margin-right: 4px;
@@ -502,7 +513,6 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 12px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
   margin-bottom: 14px;
 }
 .cart-grand-label {
@@ -584,7 +594,7 @@ body {
 /* ─── Cart Confirmation Page ──────────────────────── */
 .subpage-body {
   overflow: auto;
-  height: calc(100vh - var(--header-height));
+  height: calc(100vh - var(--header-height) - 50px);
   background: var(--cafe-light);
 }
 

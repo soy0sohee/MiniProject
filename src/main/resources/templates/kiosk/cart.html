@@ -254,7 +254,7 @@
             <div id="lookup-coupon-list"></div>
 
             <!-- 보유 포인트 표시 -->
-            <div class="lookup-result-row" style="margin-top: 8px">
+            <div class="lookup-result-row">
               <span class="lookup-result-label">보유 포인트</span>
               <span class="lookup-result-value" id="lookup-points-value"
                 >0 P</span
@@ -394,18 +394,18 @@
         </div>
       </div>
       <!-- /subpage-container -->
-
-      <footer class="kiosk-page-footer">
-        <a
-          th:href="@{/admin/login}"
-          href="/admin/login"
-          class="kiosk-admin-link"
-        >
-          <i class="bi bi-person-gear"></i>관리자
-        </a>
-      </footer>
     </div>
     <!-- /subpage-body -->
+
+    <footer class="kiosk-page-footer">
+      <a
+              th:href="@{/admin/login}"
+              href="/admin/login"
+              class="kiosk-admin-link"
+      >
+        <i class="bi bi-person-gear"></i>관리자
+      </a>
+    </footer>
 
     <div class="toast-notification" id="toast"></div>
 

@@ -116,6 +116,17 @@ src/main/resources/
 
 - **GitHub Issues**: [MiniProject Issues](https://github.com/Byungkeol-Choi/MiniProject/issues)
 - 팀 진행·회의 사항 등은 발표 슬라이드 및 공용 스프레드시트(발표 자료 링크)를 참고하세요.
+- **트러블슈팅 기록**
+  - **1. 관리자 로그인 실패** — `BadCredentialsException`
+    - **원인**: fork로 프로젝트 복사 시 DB의 BCrypt 해시값이 실제 비밀번호와 불일치
+    - **해결**:
+       1. `SecurityConfig`에 `DaoAuthenticationProvider`로 `UserDetailsService`와 `BCryptPasswordEncoder` 연결
+       2. `BCryptPasswordEncoder.encode()`로 새 해시값 생성 후 DB `admin` 테이블 업데이트
+  - **2. 포인트 적립 후 로그아웃 오류**
+    - **원인**: fork로 프로젝트 복사 시 DB의 BCrypt 해시값이 실제 비밀번호와 불일치
+    - **해결**:
+      1. `SecurityConfig`에 `DaoAuthenticationProvider`로 `UserDetailsService`와 `BCryptPasswordEncoder` 연결
+      2. `BCryptPasswordEncoder.encode()`로 새 해시값 생성 후 DB `admin` 테이블 업데이트
 
 ## 라이선스
 
